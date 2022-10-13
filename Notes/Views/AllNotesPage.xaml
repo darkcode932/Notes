@@ -6,41 +6,12 @@
              Title="Your Notes">
     <AbsoluteLayout>
         <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 1">
-            <CollectionView x:Name="notesCollection">
-                <CollectionView.ItemsSource>
-                    <x:Array Type="{x:Type model:Note}">
-                        <model:Note 
-                            Title="Remember"
-                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
-                            Date= "2021-03-09"
-                            />
-                        <model:Note 
-                            Title="Remember"
-                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
-                            Date= "2021-03-09"
-                            />
-                        <model:Note 
-                            Title="Remember"
-                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
-                            Date= "2021-03-09"
-                            />
-                        <model:Note 
-                            Title="Remember"
-                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
-                            Date= "2021-03-09"
-                            />
-                        <model:Note 
-                            Title="Remember"
-                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
-                            Date= "2021-03-09"
-                            />
-                        <model:Note 
-                            Title="Remember"
-                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
-                            Date= "2021-03-09"
-                            />
-                    </x:Array>
-                </CollectionView.ItemsSource>
+            <CollectionView x:Name="notesCollection"
+                        ItemsSource="{Binding Notes}"
+                        Margin="20"
+                        SelectionMode="Single"
+                        SelectionChanged="notesCollection_SelectionChanged">
+                
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Note">
                         <VerticalStackLayout>
@@ -73,6 +44,13 @@
             Padding="16"
             BackgroundColor="#2a8cff"
             Clicked="Add_Clicked"
-            />
+            >
+            <ImageButton.Shadow>
+                <Shadow Brush="Black"
+                Offset="4,4"
+                Radius="36"
+                Opacity="0.5" />
+            </ImageButton.Shadow>
+        </ImageButton>
     </AbsoluteLayout>
 </ContentPage>
