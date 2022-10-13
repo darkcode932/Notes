@@ -31,6 +31,7 @@ namespace Notes.Models
                                         .Select(filename => new Note()
                                         {
                                             Filename = filename,
+                                            Title = File.ReadAllText(filename),
                                             Text = File.ReadAllText(filename),
                                             Date = File.GetCreationTime(filename)
                                         })

@@ -11,8 +11,30 @@ public partial class AllNotesPage : ContentPage
         BindingContext = new Models.AllNotes();
     }
 
-	private async void Add_Clicked(object sender, EventArgs e)
+    protected override void OnAppearing()
+    {
+        ((Models.AllNotes)BindingContext).LoadNotes();
+    }
+
+    private async void Add_Clicked(object sender, EventArgs e)
 	{
 		await Shell.Current.GoToAsync(nameof(NewNote));
 	}
+
+    private async void notesCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.CurrentSelection.Count != 0) //permet de se rassurer qu'on a cliqué pour une nouvelle note
+        {
+            // Get the note model
+            var note = (Models.Note)e.CurrentSelection[0]; //on récupère la note
+
+            // Should navigate to "NotePage?ItemId=path\on\device\XYZ.notes.txt"
+            await Shell.Current.GoToAsync($"{nameof(NotePage)}?{nameof(NotePage.ItemId)}={note.Filename}");
+
+            // Unselect the UI
+            notesCollection.SelectedItem = null;
+        }
+    }
+
+
 }
