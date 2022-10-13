@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Notes.Models"
+             x:Class="Notes.Views.AllNotesPage"
+             Title="Your Notes">
+    <AbsoluteLayout>
+        <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 1, 1, 1">
+            <CollectionView x:Name="notesCollection">
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type model:Note}">
+                        <model:Note 
+                            Title="Remember"
+                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
+                            Date= "2021-03-09"
+                            />
+                        <model:Note 
+                            Title="Remember"
+                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
+                            Date= "2021-03-09"
+                            />
+                        <model:Note 
+                            Title="Remember"
+                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
+                            Date= "2021-03-09"
+                            />
+                        <model:Note 
+                            Title="Remember"
+                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
+                            Date= "2021-03-09"
+                            />
+                        <model:Note 
+                            Title="Remember"
+                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
+                            Date= "2021-03-09"
+                            />
+                        <model:Note 
+                            Title="Remember"
+                            Text="Lorem ipsum dolor sitamet, consectetur adipiscing elit"
+                            Date= "2021-03-09"
+                            />
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Note">
+                        <VerticalStackLayout>
+                            <HorizontalStackLayout Margin="20" Spacing="8">
+                                <VerticalStackLayout Padding="10" Spacing="6">
+                                    <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold" FontFamily="Nexa"/>
+                                    <Label Text="{Binding Text}" FontSize="12" FontAttributes="Italic" TextColor="DarkGray"/>
+                                    <HorizontalStackLayout Spacing="2">
+                                        <Image Source="heart_icon.png" HeightRequest="20"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                <Label Text="{Binding Date, StringFormat='{0:T}'}" VerticalTextAlignment="End" FontSize="12" FontAttributes="Bold" TextColor="Gray"/>
+                            </HorizontalStackLayout>
+                            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="DarkGray"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </ScrollView>
+        <ImageButton
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            AbsoluteLayout.LayoutBounds="1, 1"
+            WidthRequest="100"
+            HeightRequest="100"
+            CornerRadius="36"
+            Source="plus.png"
+            Padding="16"
+            BackgroundColor="#2a8cff"
+            Clicked="Add_Clicked"
+            />
+    </AbsoluteLayout>
+</ContentPage>

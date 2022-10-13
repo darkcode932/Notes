@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.NewNote"
+             Title="New Note">
+    <VerticalStackLayout Margin="24, 40" Spacing="20">
+        <Label 
+            Text="New Note"
+            FontAttributes="Bold"
+            FontSize="32"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+        <VerticalStackLayout>
+            <Label Text="Note Tile" TextColor="Grey"/>
+            <Editor x:Name="TitleEditor"
+                Placeholder="Enter a Title"
+                Text="{Binding Title}"
+                HeightRequest="100" />
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#2a8cff"/>
+        </VerticalStackLayout>
+        <HorizontalStackLayout Spacing="8">
+            <Button Text="B"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="LightGray"
+                    WidthRequest="40"
+                     />
+
+            <Button
+                    Text="I"
+                    TextColor="Black"
+                    FontAttributes="Italic"
+                    BackgroundColor="LightGray"
+                    WidthRequest="40"
+                     />
+            <Button
+                    Text="U"
+                    TextColor="Black"
+                    BackgroundColor="LightGray"
+                    WidthRequest="40"
+                     />
+        </HorizontalStackLayout>
+        <VerticalStackLayout>
+            <Label Text="Note Content" TextColor="Grey"/>
+            <Editor x:Name="TextEditor"
+                Placeholder="Enter a Text"
+                Text="{Binding Text}"
+                HeightRequest="100" />
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="LightGrey"/>
+        </VerticalStackLayout>
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="36">
+            <Button Text="Save my note"
+                    FontAttributes="Bold"
+                    Clicked="Save_Clicked" />
+
+            <Button Grid.Column="1"
+                    Text="Save as Drapht"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    BackgroundColor="LightGray"
+                     />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

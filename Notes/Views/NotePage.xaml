@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.NotePage"
+             Title="Note Page">
+    <VerticalStackLayout Margin="24, 60" Spacing="50">
+        <Label 
+            Text="Remember"
+            FontAttributes="Bold"
+            FontSize="32"
+            VerticalOptions="Start" 
+            HorizontalOptions="Start" />
+        <VerticalStackLayout Spacing="10">
+            <Label Text="monday 03 oct 2022, 08:12 PM"/>
+            <Label 
+                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices lorem elementum quis tristique cursus bibendum hac quam. Sit sit urna nibh nunc dictum cursus massa arcu. Facilisi est, sapien rhoncus feugiat curabitur cursus. Proin posuere fringilla aliquam condimentum laoreet."
+                TextColor="LightGray"
+                FontAttributes="Italic"
+                />
+        </VerticalStackLayout>
+        <HorizontalStackLayout Spacing="16">
+            <ImageButton
+                Source="delete_icon.png"
+                BackgroundColor="LightGray"
+                WidthRequest="50"
+                HeightRequest="50"
+                Padding="12"
+                CornerRadius="8"
+                
+                />
+            <ImageButton
+                Source="write_icon.png"
+                BackgroundColor="LightGray"
+                WidthRequest="50"
+                HeightRequest="50"
+                Padding="12"
+                CornerRadius="8"
+                
+                />
+            <ImageButton
+                Source="share1_icon.png"
+                BackgroundColor="LightGray"
+                WidthRequest="50"
+                HeightRequest="50"
+                Padding="12"
+                CornerRadius="8"
+                
+                />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
