@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 namespace Notes.Models
 {
     internal class Note
+
     {
+        public String Filename { get; set; }
         public String Title { get; set; }
 
-        public String Date { get; set; } = DateTime.Now.ToString();
+        public DateTime Date { get; set; } = DateTime.Now;
 
         public String Format { get; set; } = "yyyy-MM-dd";
         public String Text { get; set; }
